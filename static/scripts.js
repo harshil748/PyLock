@@ -7,10 +7,10 @@ document.getElementById('add-password-form').addEventListener('submit', function
     })
     .then(response => response.json())
     .then(data => {
-        alert(data.message);
+        M.toast({html: data.message});
     })
     .catch(error => {
-        alert('Error: ' + error.message);
+        M.toast({html: 'Error: ' + error.message});
     });
 });
 
@@ -24,12 +24,24 @@ document.getElementById('get-password-form').addEventListener('submit', function
     .then(response => response.json())
     .then(data => {
         if (data.username && data.password) {
-            alert('Username: ' + data.username + '\nPassword: ' + data.password);
+            M.toast({html: 'Username: ' + data.username + '<br>Password: ' + data.password});
         } else {
-            alert(data.message);
+            M.toast({html: data.message});
         }
     })
     .catch(error => {
-        alert('Error: ' + error.message);
+        M.toast({html: 'Error: ' + error.message});
     });
+});
+
+// Add animations and transitions
+document.querySelectorAll('.card').forEach(card => {
+    card.style.opacity = 0;
+    card.style.transition = 'opacity 0.5s ease-in-out';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'transform 0.5s ease-in-out';
+    setTimeout(() => {
+        card.style.opacity = 1;
+        card.style.transform = 'translateY(0)';
+    }, 100);
 });
