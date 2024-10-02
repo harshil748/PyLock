@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Password Manager</h1>
+    <div class="instructions">
+        <p>Use the form below to add a new password or retrieve an existing one.</p>
+    </div>
+    <div class="form-container">
+        <h2>Add Password</h2>
+        <form id="add-password-form">
+            <label for="service">Service:</label>
+            <input type="text" id="service" name="service" required>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Add Password</button>
+        </form>
+    </div>
+    <div class="form-container">
+        <h2>Retrieve Password</h2>
+        <form id="get-password-form">
+            <label for="service">Service:</label>
+            <input type="text" id="service" name="service" required>
+            <button type="submit">Get Password</button>
+        </form>
+    </div>
+    <div class="signature">
+        <p>Created by [Your Name]</p>
+    </div>
+    <script src="/static/scripts.js"></script>
+</body>
+</html>
