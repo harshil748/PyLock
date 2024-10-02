@@ -5,35 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Manager</title>
     <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
-    <h1>Password Manager</h1>
-    <div class="instructions">
-        <p>Use the form below to add a new password or retrieve an existing one.</p>
-    </div>
-    <div class="form-container">
-        <h2>Add Password</h2>
-        <form id="add-password-form">
-            <label for="service">Service:</label>
-            <input type="text" id="service" name="service" required>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Add Password</button>
-        </form>
-    </div>
-    <div class="form-container">
-        <h2>Retrieve Password</h2>
-        <form id="get-password-form">
-            <label for="service">Service:</label>
-            <input type="text" id="service" name="service" required>
-            <button type="submit">Get Password</button>
-        </form>
-    </div>
-    <div class="signature">
-        <p>Created by [Your Name]</p>
-    </div>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">Password Manager</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="container">
+            <div class="instructions card-panel">
+                <p>Use the form below to add a new password or retrieve an existing one.</p>
+            </div>
+            <article class="card">
+                <div class="card-content">
+                    <span class="card-title">Add Password</span>
+                    <form id="add-password-form">
+                        <div class="input-field">
+                            <label for="service">Service:</label>
+                            <input type="text" id="service" name="service" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <button class="btn waves-effect waves-light" type="submit">Add Password</button>
+                    </form>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card-content">
+                    <span class="card-title">Retrieve Password</span>
+                    <form id="get-password-form">
+                        <div class="input-field">
+                            <label for="service">Service:</label>
+                            <input type="text" id="service" name="service" required>
+                        </div>
+                        <button class="btn waves-effect waves-light" type="submit">Get Password</button>
+                    </form>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <p class="center-align">Created by [Your Name]</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="/static/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>

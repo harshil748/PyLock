@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
     background-color: #f0f0f0;
     padding: 20px;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1, h2 {
@@ -51,4 +53,23 @@ button:hover {
     margin-top: 20px;
     font-style: italic;
     text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+
+    input[type="text"], input[type="password"] {
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px 15px;
+    }
 }
