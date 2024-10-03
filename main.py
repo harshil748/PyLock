@@ -1,8 +1,6 @@
 from flask import Flask, request, render_template, jsonify
 from cryptography.fernet import Fernet
-
 from pyotp import TOTP
-
 import pyotp
 
 app = Flask(__name__)
@@ -97,8 +95,6 @@ def generate_totp_route():
     else:
         return jsonify({'message': 'Service not found.'}), 404
 
-if __name__ == '__main__':
-=======
 if __name__ == "__main__":
 
     app.run(debug=True)
