@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, jsonify
 from cryptography.fernet import Fernet
+import pyotp
 
 app = Flask(__name__)
 
@@ -14,12 +15,20 @@ def decrypt_password(key, encrypted_password):
     f = Fernet(key)
     return f.decrypt(encrypted_password.encode()).decode()
 
+def generate_totp(secret):
+    totp = pyotp.TOTP(secret)
+    return totp.now()
+
 passwords = {}
 key = generate_key()
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/totp')
+def totp():
+    return render_template('totp.html')
 
 @app.route('/add_password', methods=['POST'])
 def add_password():
@@ -42,6 +51,16 @@ def get_password():
         return jsonify({'username': passwords[service]['username'], 'password': decrypted_password})
     else:
         return jsonify({'message': 'Password not found.'}), 404
+
+@app.route('/generate_totp', methods=['POST'])
+def generate_totp_route():
+    service = request.form['service']
+    if service in passwords:
+        secret = passwords[service]['password']
+        totp = generate_totp(secret)
+        return jsonify({'totp': totp})
+    else:
+        return jsonify({'message': 'Service not found.'}), 404
 
 if __name__ == '__main__':
     app.run(debug=True)

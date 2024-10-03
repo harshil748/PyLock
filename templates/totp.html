@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Manager</title>
+    <title>TOTP Generator</title>
     <link rel="stylesheet" href="/static/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
@@ -11,49 +11,35 @@
     <header>
         <nav>
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo center">PyLock</a>
+                <a href="#" class="brand-logo center">TOTP Generator</a>
             </div>
         </nav>
     </header>
     <main>
         <section class="container">
             <div class="instructions card-panel">
-                <p>Use the form below to add a new password or retrieve an existing one.</p>
+                <p>Use the form below to generate a TOTP for a service.</p>
             </div>
             <article class="card">
                 <div class="card-content">
-                    <span class="card-title">Add Password</span>
-                    <form id="add-password-form">
+                    <span class="card-title">Generate TOTP</span>
+                    <form id="generate-totp-form">
                         <div class="input-field">
                             <label for="service">Service:</label>
                             <input type="text" id="service" name="service" required>
                         </div>
-                        <div class="input-field">
-                            <label for="username">Username:</label>
-                            <input type="text" id="username" name="username" required>
-                        </div>
-                        <div class="input-field">
-                            <label for="password">Password:</label>
-                            <input type="password" id="password" name="password" required>
-                        </div>
-                        <button class="btn waves-effect waves-light" type="submit">Add Password</button>
+                        <button class="btn waves-effect waves-light" type="submit">Generate TOTP</button>
                     </form>
                 </div>
             </article>
             <article class="card">
                 <div class="card-content">
-                    <span class="card-title">Retrieve Password</span>
-                    <form id="get-password-form">
-                        <div class="input-field">
-                            <label for="service">Service:</label>
-                            <input type="text" id="service" name="service" required>
-                        </div>
-                        <button class="btn waves-effect waves-light" type="submit">Get Password</button>
-                    </form>
+                    <span class="card-title">TOTP</span>
+                    <p id="totp-display"></p>
                 </div>
             </article>
             <div class="center-align">
-                <a href="/totp" class="btn waves-effect waves-light">Generate TOTP</a>
+                <a href="/" class="btn waves-effect waves-light">Back to Main Page</a>
             </div>
         </section>
     </main>
