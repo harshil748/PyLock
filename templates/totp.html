@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOTP Generator</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">TOTP Generator</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="container">
+            <article class="card">
+                <div class="card-content">
+                    <span class="card-title">Generate TOTP</span>
+                    <form id="totp-form">
+                        <div class="input-field">
+                            <label for="service">Service:</label>
+                            <input type="text" id="service" name="service" required>
+                        </div>
+                        <button class="btn waves-effect waves-light" type="submit">Generate TOTP</button>
+                    </form>
+                    <div id="totp-result" class="card-panel" style="display: none;">
+                        <span class="card-title">TOTP:</span>
+                        <p id="totp-value"></p>
+                    </div>
+                </div>
+            </article>
+            <div class="center-align">
+                <a href="/" class="btn waves-effect waves-light">Back to Main Page</a>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <p class="center-align">Created by Team PyLock</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/static/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
