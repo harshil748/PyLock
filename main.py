@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, jsonify
 from cryptography.fernet import Fernet
-import pyotp
+from pyotp import TOTP
 
 app = Flask(__name__)
 
