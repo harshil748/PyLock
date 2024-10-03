@@ -41,6 +41,13 @@ PyLock is a password manager that allows users to securely store and retrieve th
 3. Click the "Get Password" button.
 4. A message will appear displaying the username and password for the specified service.
 
+### Generating a TOTP
+1. Open the password manager in your web browser.
+2. Click the "Generate TOTP" button to navigate to the TOTP generation page.
+3. Fill in the "Service" field in the "Generate TOTP" form.
+4. Click the "Generate TOTP" button.
+5. The TOTP for the specified service will be displayed.
+
 ## Future Improvements and Contributions
 - Add user authentication to enhance security.
 - Implement password strength validation.

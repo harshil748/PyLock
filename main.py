@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template, jsonify
 from cryptography.fernet import Fernet
-from pyotp import TOTP
 import pyotp
 
 app = Flask(__name__)
@@ -20,10 +19,6 @@ def decrypt_password(key, encrypted_password):
     return f.decrypt(encrypted_password.encode()).decode()
 
 
-def generate_totp(secret):
-    totp = pyotp.TOTP(secret)
-    return totp.now()
-
 passwords = {}
 key = generate_key()
 
@@ -33,15 +28,12 @@ def index():
     return render_template("index.html")
 
 
-
 @app.route('/totp')
 def totp():
     return render_template('totp.html')
 
-@app.route('/add_password', methods=['POST'])
 
 @app.route("/add_password", methods=["POST"])
-
 def add_password():
     service = request.form["service"]
     username = request.form["username"]
@@ -67,34 +59,17 @@ def get_password():
         return jsonify({"message": "Password not found."}), 404
 
 
-@app.route("/totp")
-def totp():
-    return render_template("totp.html")
-
-
 @app.route("/generate_totp", methods=["POST"])
 def generate_totp():
     service = request.form["service"]
     if service:
         secret = pyotp.random_base32()
-        totp = TOTP(secret)
+        totp = pyotp.TOTP(secret)
         current_totp = totp.now()
         return jsonify({"totp": current_totp})
     else:
         return jsonify({"message": "Please provide a service name."}), 400
 
 
-
-@app.route('/generate_totp', methods=['POST'])
-def generate_totp_route():
-    service = request.form['service']
-    if service in passwords:
-        secret = passwords[service]['password']
-        totp = generate_totp(secret)
-        return jsonify({'totp': totp})
-    else:
-        return jsonify({'message': 'Service not found.'}), 404
-
 if __name__ == "__main__":
-
     app.run(debug=True)
