@@ -55,3 +55,15 @@ PyLock is a password manager that allows users to securely store and retrieve th
 - Improve the user interface and user experience.
 
 Contributions are welcome! If you have any suggestions or improvements, feel free to create a pull request or open an issue.
+
+## User Authentication
+To enhance security, user authentication has been implemented. This ensures that only authorized users can access the password manager.
+
+## Password Strength Validation
+To ensure that users are creating strong and secure passwords, password strength validation has been implemented.
+
+## Password Categories and Tags
+Support for password categories and tags has been added to help users organize their passwords more effectively.
+
+## Improved User Interface and User Experience
+The user interface and user experience have been improved to make the design more intuitive and user-friendly.
