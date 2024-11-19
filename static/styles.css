@@ -88,3 +88,53 @@ button:hover {
     font-weight: bold;
     color: #00796b;
 }
+
+/* Improved user interface and user experience */
+header {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 0;
+}
+
+nav .brand-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+main {
+    margin-top: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card .input-field label {
+    font-size: 1rem;
+    color: #00796b;
+}
+
+.card .input-field input[type="text"],
+.card .input-field input[type="password"] {
+    border: 1px solid #00796b;
+}
+
+.card .btn {
+    background-color: #00796b;
+}
+
+.card .btn:hover {
+    background-color: #004d40;
+}
+
+footer {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
