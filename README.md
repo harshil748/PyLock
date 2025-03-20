@@ -55,6 +55,9 @@ PyLock is a password manager that allows users to securely store and retrieve th
 4. Click the "Generate TOTP" button.
 5. The TOTP for the specified service will be displayed.
 
+## Requirements Elicitation
+To understand the requirements for PyLock, we used several techniques including design interviews, record reviews, brainstorming sessions, questionnaires, and observation. For more details, please refer to the [Requirements Elicitation Document](requirements_elicitation.md).
+
 ## Future Improvements and Contributions
 
 - Add user authentication to enhance security.
