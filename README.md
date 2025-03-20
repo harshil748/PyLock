@@ -14,21 +14,29 @@ PyLock is a password manager that allows users to securely store and retrieve th
 ## How to Run the Project
 
 1. Clone the repository:
-   ```
+
+   ```bash
    git clone https://github.com/harshil748/PyLock.git
    ```
+
 2. Navigate to the project directory:
-   ```
+
+   ```bash
    cd PyLock
    ```
+
 3. Install the required dependencies:
-   ```
+
+   ```bash
    pip install -r requirements.txt
    ```
+
 4. Run the Flask application:
-   ```
+
+   ```bash
    python main.py
    ```
+
 5. Open your web browser and go to `http://127.0.0.1:5000` to access the password manager.
 
 ## Usage Instructions
